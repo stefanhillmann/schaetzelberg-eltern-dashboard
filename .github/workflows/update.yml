@@ -1,0 +1,83 @@
+name: Daten aktualisieren & veröffentlichen
+
+on:
+  schedule:
+    - cron: "7 * * * *"   # Padlet: stündlich (zur Minute 7, um die volle Stunde zu meiden)
+    - cron: "23 3 * * *"  # Schulwebsite: täglich 03:23 UTC (= 05:23 MESZ / 04:23 MEZ)
+  workflow_dispatch:       # manuell über „Run workflow“
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-and-deploy
+  cancel-in-progress: false
+
+env:
+  DAILY_CRON: "23 3 * * *"  # muss exakt dem zweiten cron-Eintrag oben entsprechen
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v5
+
+      - id: pages
+        uses: actions/configure-pages@v5
+
+      # Letzten Prüfstatus von der Live-Seite holen (stündliche Prüfungen werden
+      # nicht committet), damit „zuletzt erfolgreich“ stimmt.
+      - name: Letzten Status laden
+        run: curl -fsS "${{ steps.pages.outputs.base_url }}/data/status.json" -o /tmp/status.json && mv /tmp/status.json data/status.json || echo "Kein Live-Status gefunden, nutze Repo-Stand."
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Padlet abrufen
+        run: python scripts/fetch_padlet.py || echo "::warning::Padlet-Abruf fehlgeschlagen – bisherige Daten bleiben erhalten"
+
+      - name: Schulwebsite abrufen
+        if: github.event_name != 'schedule' || github.event.schedule == env.DAILY_CRON
+        run: python scripts/fetch_website.py || echo "::warning::Website-Abruf fehlgeschlagen – bisherige Daten bleiben erhalten"
+
+      - name: Geänderte Daten committen
+        env:
+          IS_DAILY: ${{ github.event.schedule == env.DAILY_CRON }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/padlet.json data/website.json
+          # status.json nur bei echten Änderungen oder einmal täglich committen.
+          # Der tägliche Commit hält außerdem die Repo-Aktivität aufrecht, damit
+          # GitHub geplante Workflows nicht nach 60 Tagen Inaktivität abschaltet.
+          if [ "$IS_DAILY" = "true" ] || ! git diff --cached --quiet; then
+            git add data/status.json
+          fi
+          if git diff --cached --quiet; then
+            echo "Keine inhaltlichen Änderungen."
+            exit 0
+          fi
+          git commit -m "Daten aktualisiert ($(TZ=Europe/Berlin date '+%d.%m.%Y %H:%M'))"
+          git pull --rebase
+          git push
+
+      - name: Seite zusammenstellen
+        run: |
+          mkdir -p _site
+          cp index.html app.js style.css icon.svg manifest.webmanifest _site/
+          cp -r data _site/data
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+      - id: deploy
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#1f6f5c" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#10231e" media="(prefers-color-scheme: dark)">
+  <meta name="description" content="Eltern-Dashboard der Schätzelberg-Grundschule: Kontakt, Unterrichtsausfall und Termine auf einen Blick.">
+  <title>Schätzelberg Eltern-Info</title>
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.svg">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <p class="eyebrow">Eltern-Info</p>
+      <h1>Schätzelberg-Grundschule</h1>
+      <p class="today" id="today"></p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="quick" aria-label="Schnellzugriff" id="quick"></nav>
+
+    <section class="card" id="ausfall" aria-labelledby="ausfall-h">
+      <div class="card-head">
+        <h2 id="ausfall-h">Unterrichtsausfall</h2>
+        <span class="chip" id="ausfall-chip"></span>
+      </div>
+      <div id="ausfall-body"><p class="muted">Lade …</p></div>
+    </section>
+
+    <section class="card" id="termine" aria-labelledby="termine-h">
+      <div class="card-head"><h2 id="termine-h">Nächste Termine</h2></div>
+      <div id="termine-body"><p class="muted">Lade …</p></div>
+    </section>
+
+    <section class="card" id="kontakt" aria-labelledby="kontakt-h">
+      <div class="card-head"><h2 id="kontakt-h">Kontakt</h2></div>
+      <div id="kontakt-body"><p class="muted">Lade …</p></div>
+    </section>
+
+    <section class="card" id="padlet" aria-labelledby="padlet-h">
+      <div class="card-head"><h2 id="padlet-h">Aus dem Eltern-Padlet</h2></div>
+      <div id="padlet-body"><p class="muted">Lade …</p></div>
+    </section>
+
+    <footer class="foot" id="foot"></footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

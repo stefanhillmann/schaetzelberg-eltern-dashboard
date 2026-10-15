@@ -1,0 +1,80 @@
+{
+  "site_url": "https://schaetzelberg-gs.de",
+  "contact": {
+    "phone": "030 902777462",
+    "email": "sekretariat@schaetzelberg.schule.berlin.de",
+    "sick_email": "krankmeldung@schaetzelberg-gs.de"
+  },
+  "contact_groups": [
+    {
+      "label": "Schulleitung",
+      "url": "https://schaetzelberg-gs.de/schule/schulleitung/",
+      "people": [
+        {
+          "role": "Allgemeine Leitung",
+          "name": "Christina Veer",
+          "email": "schulleitung@schaetzelberg.schule.berlin.de"
+        },
+        {
+          "role": "Stellvertretende Schulleitung",
+          "name": "Birte Stolte",
+          "email": "stellv.Schulleitung@schaetzelberg.schule.berlin.de"
+        }
+      ]
+    },
+    {
+      "label": "Schulbezogene Betreuung (SpB)",
+      "url": "https://schaetzelberg-gs.de/spb/teamleitung/",
+      "people": [
+        {
+          "role": "Allgemeine Leitung",
+          "name": "Andreas Brand",
+          "email": "a.brand@tjfbg.de"
+        },
+        {
+          "role": "Stellvertretende SpB-Leitung",
+          "name": "Doreen Paul",
+          "email": "d.paul@tjfbg.de"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "date": "2026-10-15",
+      "date_text": "15.10.26 | 14 Uhr",
+      "time": "14 Uhr",
+      "title": "Schwung in den Herbst",
+      "url": "https://schaetzelberg-gs.de/wp-content/uploads/2026/10/Flyer_Schwung-in-den-Herbst.pdf"
+    },
+    {
+      "date": "2026-11-04",
+      "date_text": "04.11.26 | 16-18 Uhr",
+      "time": "16-18 Uhr",
+      "title": "1. Gesamtkonferenz",
+      "url": null
+    },
+    {
+      "date": "2026-11-11",
+      "date_text": "11.11.26 | 16-18 Uhr",
+      "time": "16-18 Uhr",
+      "title": "1. Schulkonferenz",
+      "url": null
+    },
+    {
+      "date": "2026-11-12",
+      "date_text": "12.11.26 | 12 Uhr",
+      "time": "12 Uhr",
+      "title": "Personalversammlung",
+      "url": null
+    },
+    {
+      "date": "2026-11-19",
+      "date_text": "19.11. | 17-20 Uhr",
+      "time": "17-20 Uhr",
+      "title": "Elternsprechtag",
+      "url": null
+    }
+  ],
+  "content_changed_at": "2026-10-15T14:26:59+02:00"
+}
