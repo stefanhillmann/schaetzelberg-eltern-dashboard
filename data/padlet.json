@@ -10,6 +10,19 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4100139254",
+      "title": "Vorab Freitag",
+      "html": "<p>Bitte haben Sie Verständnis betreffs unsere Fehlstunden für Ihr Kind. Wir verzeichnen einen hohen Krankenstand im Team und hoffen nach den Ferien wieder alle an Bord zu sein. Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule </p><p><br></p>",
+      "text": "Bitte haben Sie Verständnis betreffs unsere Fehlstunden für Ihr Kind. Wir verzeichnen einen hohen Krankenstand im Team und hoffen nach den Ferien wieder alle an Bord zu sein. Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/E1P8aXbMJRp5ZwA9",
+      "attachment": "Eltern_VP_26_10_16.pdf",
+      "created_at": "2026-10-15T12:38:38.932Z",
+      "updated_at": "2026-10-15T12:38:46.389Z",
+      "pinned": false,
+      "ausfall": true
+    },
+    {
       "id": "4087406271",
       "title": "Verkehrssituation vor der Schule",
       "html": "",
@@ -101,5 +114,5 @@
       "ausfall": false
     }
   ],
-  "content_changed_at": "2026-10-15T14:26:27+02:00"
+  "content_changed_at": "2026-10-15T14:56:18+02:00"
 }
