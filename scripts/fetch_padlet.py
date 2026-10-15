@@ -9,7 +9,7 @@ import re
 import sys
 import urllib.parse
 import xml.etree.ElementTree as ET
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 
 from common import (
     fetch,
@@ -21,6 +21,7 @@ from common import (
     save_json,
     write_status,
 )
+from vertretungsplan import read_plan
 
 PADLET_URL = "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7"
 # Fallbacks, falls sich die IDs nicht mehr aus der Seite lesen lassen
@@ -107,6 +108,7 @@ def from_api(board, wall_id):
             "created_at": a.get("published_at") or a.get("created_at"),
             "updated_at": a.get("content_updated_at") or a.get("updated_at"),
             "pinned": bool(a.get("pinned_at")),
+            "_attachment_url": a.get("attachment"),  # signiert, läuft ab → wird nicht gespeichert
         }
         posts.append(post)
     return [s["title"] for s in sections], posts
@@ -167,15 +169,25 @@ def main():
         write_status("padlet", False, "Keine Beiträge gefunden")
         return 1
 
+    ausfall_section = next((s for s in sections if AUSFALL_SECTION.search(s)), None)
+    recent = (datetime.now(timezone.utc) - timedelta(days=14)).isoformat()
     for p in posts:
         p["ausfall"] = is_ausfall(p)
+        url = p.pop("_attachment_url", None)
+        p["plan"] = None
+        is_plan_post = ausfall_section and p["section"] == ausfall_section
+        if is_plan_post and url and (p["attachment"] or "").lower().endswith(".pdf") and (p["created_at"] or "") >= recent:
+            try:
+                p["plan"] = read_plan(url)
+            except Exception as e:
+                print("Vertretungsplan-PDF nicht lesbar (%s): %s" % (p["attachment"], e), file=sys.stderr)
     posts.sort(key=lambda p: p["created_at"] or "", reverse=True)
 
     data = {
         "source": source,
         "padlet_url": PADLET_URL,
         "sections": sections,
-        "ausfall_section": next((s for s in sections if AUSFALL_SECTION.search(s)), None),
+        "ausfall_section": ausfall_section,
         "posts": posts,
         "content_changed_at": now_iso(),
     }

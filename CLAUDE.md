@@ -17,7 +17,7 @@ python3 -m http.server 8765         # serve locally → http://localhost:8765
 - There are no tests or linters. To check a change, run the scripts and look at the page at 375px width, in both light and dark mode.
 - Append `?heute=YYYY-MM-DD` to the URL to simulate another date.
 - To test the empty, stale or "cancellation today" states, edit the JSON in `data/`, or call the global `render*` functions from the browser console with modified objects.
-- The scripts must stay **Python 3.9-compatible and stdlib-only**. Locally that is the macOS system Python; CI uses 3.12. So: no `X | None` annotations, no `match`, no pip packages.
+- The scripts must stay **Python 3.9-compatible and stdlib-only**. The one external dependency is the `pdftotext` CLI from poppler (`brew install poppler` locally; CI installs it). Without it, plan PDFs are skipped. Locally that is the macOS system Python; CI uses 3.12. So: no `X | None` annotations, no `match`, no pip packages.
 
 ## Architecture
 
@@ -27,6 +27,11 @@ python3 -m http.server 8765         # serve locally → http://localhost:8765
   1. It extracts `board_…` (hashid), `wallId` and the RSS feed token from the Padlet page HTML. Hardcoded fallbacks exist.
   2. It calls Padlet's **undocumented internal JSON API**: `api/5/wall_sections` and `api/10/wishes?wall_hashid=` (paginated via `meta.next`). Only this API maps posts to columns (sections).
   3. If the API fails, it falls back to the RSS feed. That feed has no sections, so `source: "rss"` is set and cancellations are detected by keyword only.
+- `vertretungsplan.py` reads the substitution-plan PDFs. The school posts them in the Ausfall section (e.g. `Eltern_VP_26_10_16.pdf`, titled „Ausfall der Randstunden“).
+  - It downloads the post's signed attachment URL, which expires, so the URL itself is never stored. Only posts from the last 14 days are processed.
+  - It runs `pdftotext -layout` and parses the date plus rows split into columns on 2+ spaces: Stunde, Klasse, Info. Wrapped info lines are appended to the row before. Bullets after „Aktuelles…“ become notes.
+  - The result is stored as `post.plan`. If the layout is unknown but text exists, it falls back to `plan.raw`.
+  - Test it offline with `python3 scripts/vertretungsplan.py file.txt`.
 - `fetch_website.py` parses the WordPress/Elementor homepage:
   - events from `.sel-event-item` markup (dates like `15.10.26 | 14 Uhr`, sometimes without a year; `infer_year` handles that);
   - contact info from the header;
@@ -47,7 +52,9 @@ python3 -m http.server 8765         # serve locally → http://localhost:8765
   - Filtering out past events and setting the "Heute" badges happen client-side in `app.js`, because website data refreshes only daily.
   - Staleness is judged by the age of `last_success`: Padlet after more than 3 h, website after more than 36 h. A single failed check (`ok: false`) does not count as stale.
 
-**Frontend:** `index.html`, `app.js` and `style.css` are vanilla. `app.js` loads the three JSON files and renders four cards: Ausfall, Termine, Kontakt, Padlet. Colors are CSS custom properties on `:root` with a `prefers-color-scheme: dark` override.
+**Frontend:** `index.html`, `app.js` and `style.css` are vanilla. `app.js` loads the three JSON files and renders four cards: Ausfall, Termine, Kontakt, Padlet.
+- Plans render as tables with a „Meine Klasse“ filter, stored in localStorage only. The Ausfall chip then says whether that class is affected on the next plan day.
+- A plan whose date has passed moves to „Ältere Einträge“. Colors are CSS custom properties on `:root` with a `prefers-color-scheme: dark` override.
 
 **CI (`.github/workflows/update.yml`):** a single job with two crons.
 

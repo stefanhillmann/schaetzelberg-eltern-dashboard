@@ -121,6 +121,29 @@ main.wrap { margin-top: -28px; padding-bottom: calc(24px + env(safe-area-inset-b
 
 .subhead { margin: 14px 0 4px; font-size: .8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
 
+/* Vertretungsplan */
+.picker { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; font-weight: 600; font-size: .9rem; }
+.picker select {
+  font: inherit; font-weight: 600; color: var(--ink); background: var(--card);
+  border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; min-height: 44px;
+}
+.plan { border: 1px solid var(--line); border-left: 4px solid var(--alert); border-radius: 10px; padding: 10px 12px; margin-top: 10px; }
+.plan-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.plan h3 { font-size: 1.05rem; }
+.plan .meta { font-size: .8rem; color: var(--muted); margin: 2px 0 8px; }
+.rows { list-style: none; margin: 0 0 8px; padding: 0; }
+.rows li { display: flex; gap: 10px; padding: 8px 0; border-top: 1px solid var(--line); }
+.rows li:first-child { border-top: 0; }
+.rows .kl {
+  flex: none; min-width: 44px; height: 32px; padding: 0 6px; border-radius: 8px;
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--alert-soft); color: var(--alert); font-weight: 800;
+}
+.rows .st { display: block; font-size: .8rem; font-weight: 700; color: var(--muted); }
+.plan-notes { margin: 4px 0 8px; padding-left: 1.2em; font-size: .9rem; }
+.plan .state { margin-bottom: 8px; }
+.raw { white-space: pre-wrap; font-size: .8rem; overflow-x: auto; }
+
 /* Termine */
 .events { list-style: none; margin: 0; padding: 0; }
 .event { display: flex; gap: 12px; padding: 10px 0; border-top: 1px solid var(--line); align-items: center; }

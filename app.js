@@ -68,7 +68,58 @@ function renderQuick(web, padlet) {
   $("quick").innerHTML = links.join("");
 }
 
+// --- Klassenfilter für den Vertretungsplan (nur lokal im Browser gespeichert) ----
+const CLASS_KEY = "schaetzelberg-klasse";
+function getKlasse() { try { return localStorage.getItem(CLASS_KEY) || ""; } catch (e) { return ""; } }
+function setKlasse(k) { try { k ? localStorage.setItem(CLASS_KEY, k) : localStorage.removeItem(CLASS_KEY); } catch (e) { /* egal */ } }
+const normKlasse = (k) => String(k || "").toLowerCase().replace(/\s+/g, "");
+const rowMatches = (row, k) => {
+  const kl = normKlasse(row.klasse);
+  if (kl === "alle") return true;
+  const grade = k.charAt(0);
+  // „3a/3b“ oder „3a/b“ → passende Klasse enthalten?
+  return kl.split(/[\/,+&]/).some((part) => (/^\d/.test(part) ? part : grade + part) === k);
+};
+
+function classPickerHTML(plans) {
+  const k = getKlasse();
+  const set = new Set();
+  for (let g = 1; g <= 6; g++) for (const c of "abcd") set.add(g + c);
+  plans.forEach((pl) => pl.rows.forEach((r) => normKlasse(r.klasse).split(/[\/,+&]/).forEach((x) => /^\d[a-z]$/.test(x) && set.add(x))));
+  if (k) set.add(k);
+  const opts = [...set].sort().map((c) => `<option value="${esc(c)}"${c === k ? " selected" : ""}>Klasse ${esc(c)}</option>`).join("");
+  return `<label class="picker"><span>Meine Klasse</span><select id="klasse"><option value="">Alle Klassen</option>${opts}</select></label>`;
+}
+
+function planHTML(p) {
+  const pl = p.plan;
+  const k = getKlasse();
+  const diff = pl.date ? dayDiff(pl.date, TODAY) : null;
+  const badge = diff === 0 ? `<span class="chip alert">Heute</span>` : diff === 1 ? `<span class="chip brand">Morgen</span>` : "";
+  const dayTxt = pl.date ? fmt(new Date(pl.date + "T12:00:00Z"), { weekday: "long", day: "numeric", month: "long" }) : "";
+  let html = `<article class="plan">
+    <div class="plan-head"><h3>${esc(dayTxt || p.title || "Vertretungsplan")}</h3>${badge}</div>
+    <p class="meta">${esc(pl.title || "Vertretungsplan")} · eingestellt ${esc(relDay(p.created_at))}</p>`;
+  if (pl.raw) {
+    html += `<pre class="raw">${esc(pl.raw)}</pre>`;
+  } else {
+    const rows = k ? pl.rows.filter((r) => rowMatches(r, k)) : pl.rows;
+    if (rows.length) {
+      html += `<ul class="rows">` + rows.map((r) => `<li><span class="kl">${esc(r.klasse)}</span><span class="info"><span class="st">${esc(r.stunde)}${/St/.test(r.stunde) ? "" : " Std."}</span>${esc(r.info)}</span></li>`).join("") + `</ul>`;
+    } else if (pl.rows.length) {
+      html += `<div class="state ok">${icon("check")}<p><strong>Klasse ${esc(k)}: nichts eingetragen</strong><span class="small muted">${pl.rows.length} Eintr${pl.rows.length > 1 ? "äge" : "ag"} für andere Klassen</span></p></div>`;
+    }
+    if (pl.notes.length) {
+      html += `<ul class="plan-notes">` + pl.notes.map((n) => `<li>${esc(n)}</li>`).join("") + `</ul>`;
+    }
+  }
+  if (p.html) html += `<div class="body small">${p.html}</div>`;
+  html += `<a class="small" href="${esc(p.url)}" target="_blank" rel="noopener">Original-PDF im Padlet</a></article>`;
+  return html;
+}
+
 function noticeHTML(p, older) {
+  if (p.plan && !older) return planHTML(p);
   const body = p.html ? `<div class="body">${p.html}</div>` : "";
   const att = p.attachment ? ` · PDF: ${esc(p.attachment.replace(/\.pdf$/i, "").replace(/_/g, " "))}` : "";
   return `<article class="notice${older ? " older" : ""}">
@@ -79,7 +130,9 @@ function noticeHTML(p, older) {
   </article>`;
 }
 
+let lastAusfallArgs = null;
 function renderAusfall(padlet, status) {
+  lastAusfallArgs = [padlet, status];
   const st = (status && status.padlet) || {};
   const chip = $("ausfall-chip");
   const box = $("ausfall-body");
@@ -89,7 +142,8 @@ function renderAusfall(padlet, status) {
     return;
   }
 
-  const isRecent = (p) => p.created_at && dayDiff(TODAY, ymd(new Date(p.created_at))) <= RECENT_DAYS;
+  // Ein Vertretungsplan für einen vergangenen Tag ist nicht mehr aktuell
+  const isRecent = (p) => p.created_at && dayDiff(TODAY, ymd(new Date(p.created_at))) <= RECENT_DAYS && !(p.plan && p.plan.date && p.plan.date < TODAY);
   const inSection = padlet.posts.filter((p) => padlet.ausfall_section && p.section === padlet.ausfall_section);
   const recent = inSection.filter(isRecent);
   const older = inSection.filter((p) => !isRecent(p));
@@ -103,6 +157,11 @@ function renderAusfall(padlet, status) {
   if (stale) {
     html += `<div class="state warn">${icon("warn")}<p><strong>Daten möglicherweise veraltet</strong>Letzter erfolgreicher Abruf: ${esc(checkedText(st.last_success))}. Im Zweifel bitte direkt im Padlet nachsehen.</p></div>`;
   }
+
+  const plans = recent.filter((p) => p.plan && !p.plan.raw).map((p) => p.plan);
+  if (plans.length) html += classPickerHTML(plans);
+  // Pläne nach Datum (nächster Tag zuerst), danach übrige Meldungen
+  recent.sort((a, b) => ((a.plan && a.plan.date) || "9").localeCompare((b.plan && b.plan.date) || "9"));
 
   if (recent.length) {
     html += recent.map((p) => noticeHTML(p, false)).join("");
@@ -120,8 +179,19 @@ function renderAusfall(padlet, status) {
     html += `<p class="small muted">Hinweis: Padlet-Spalten waren beim letzten Abruf nicht verfügbar; Ausfälle wurden über Stichworte erkannt.</p>`;
   }
   box.innerHTML = html;
+  const sel = $("klasse");
+  if (sel) sel.addEventListener("change", () => { setKlasse(sel.value); renderAusfall(...lastAusfallArgs); });
 
-  if (todayCount) { chip.className = "chip alert"; chip.textContent = todayCount + " neu heute"; }
+  const k = getKlasse();
+  const nextPlan = recent.find((p) => p.plan && p.plan.date && !p.plan.raw);
+  if (k && nextPlan) {
+    const d = dayDiff(nextPlan.plan.date, TODAY);
+    const when = d === 0 ? "Heute" : d === 1 ? "Morgen" : fmt(new Date(nextPlan.plan.date + "T12:00:00Z"), { weekday: "short" });
+    const hit = nextPlan.plan.rows.some((r) => rowMatches(r, k));
+    chip.className = hit ? "chip alert" : "chip ok";
+    chip.textContent = when + ": " + k + (hit ? " betroffen" : " nicht betroffen");
+  }
+  else if (todayCount) { chip.className = "chip alert"; chip.textContent = todayCount + " neu heute"; }
   else if (recent.length) { chip.className = "chip alert"; chip.textContent = recent.length + " Meldung" + (recent.length > 1 ? "en" : ""); }
   else if (stale) { chip.className = "chip warn"; chip.textContent = "Veraltet"; }
   else { chip.className = "chip ok"; chip.textContent = elsewhere.length ? "Keine neuen Meldungen" : "Alles normal"; }

@@ -6,7 +6,7 @@ Mobiles Dashboard für Eltern der Schätzelberg-Grundschule: Kontakt, Unterricht
 
 | Quelle | Was | Wie oft |
 |---|---|---|
-| Eltern-Padlet | Spalte „Stundenausfall/Vertretungsplan“, alle Beiträge | stündlich |
+| Eltern-Padlet | Spalte „Stundenausfall/Vertretungsplan“ inkl. ausgelesener Vertretungsplan-PDFs, alle Beiträge | stündlich |
 | Schulwebsite | Termine (Startseite), Kontakt, Schulleitung, SpB-Leitung | täglich |
 
 - `scripts/fetch_padlet.py` und `scripts/fetch_website.py` (nur Python-Standardbibliothek) schreiben `data/*.json`.
@@ -21,6 +21,8 @@ Mobiles Dashboard für Eltern der Schätzelberg-Grundschule: Kontakt, Unterricht
 3. Unter **Actions** den Workflow „Daten aktualisieren & veröffentlichen“ einmal per **Run workflow** starten.
 
 ## Lokal testen
+
+Für die Vertretungsplan-PDFs wird `pdftotext` benötigt (`brew install poppler`).
 
 ```bash
 python3 scripts/fetch_padlet.py && python3 scripts/fetch_website.py

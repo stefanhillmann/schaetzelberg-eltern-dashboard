@@ -41,6 +41,9 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: pdftotext bereitstellen (für Vertretungsplan-PDFs)
+        run: command -v pdftotext || (sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils)
+
       - name: Padlet abrufen
         run: python scripts/fetch_padlet.py || echo "::warning::Padlet-Abruf fehlgeschlagen – bisherige Daten bleiben erhalten"
 
