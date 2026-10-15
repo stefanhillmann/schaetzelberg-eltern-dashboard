@@ -20,7 +20,42 @@
       "created_at": "2026-10-15T12:38:38.932Z",
       "updated_at": "2026-10-15T12:38:46.389Z",
       "pinned": false,
-      "ausfall": true
+      "ausfall": true,
+      "plan": {
+        "title": "Ausfall der Randstunden",
+        "date": "2026-10-16",
+        "weekday": "Freitag",
+        "rows": [
+          {
+            "stunde": "1./2.",
+            "klasse": "4b",
+            "info": "Klasse kann zur 3. Stunde kommen; Betreuung ist gewährleistet"
+          },
+          {
+            "stunde": "1.",
+            "klasse": "3a",
+            "info": "Entfällt; Kinder können zur 2. St. kommen; Betreuung ist ab 8 Uhr gewährleistet"
+          },
+          {
+            "stunde": "ab 3.St.",
+            "klasse": "6a",
+            "info": "Klasse wird entlassen; Betreuung bis 13:30 möglich"
+          },
+          {
+            "stunde": "5.+6.",
+            "klasse": "4c",
+            "info": "Stunde entfällt/Betreuung ist gewährleistet"
+          },
+          {
+            "stunde": "6.St.",
+            "klasse": "4a",
+            "info": "Entfällt/ Betreuung bis 13:30 gewährleistet"
+          }
+        ],
+        "notes": [
+          "Musikbetonungskurse von Abd entfallen bis auf Weiteres."
+        ]
+      }
     },
     {
       "id": "4087406271",
@@ -33,7 +68,8 @@
       "created_at": "2026-10-07T05:40:58.609Z",
       "updated_at": "2026-10-07T05:40:58.617Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     },
     {
       "id": "4087404838",
@@ -46,7 +82,8 @@
       "created_at": "2026-10-07T05:39:45.213Z",
       "updated_at": "2026-10-07T05:39:45.221Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     },
     {
       "id": "4080160391",
@@ -59,7 +96,8 @@
       "created_at": "2026-10-02T05:31:43.375Z",
       "updated_at": "2026-10-02T05:31:43.375Z",
       "pinned": false,
-      "ausfall": true
+      "ausfall": true,
+      "plan": null
     },
     {
       "id": "4078639166",
@@ -72,7 +110,8 @@
       "created_at": "2026-10-01T09:21:05.193Z",
       "updated_at": "2026-10-01T09:21:05.203Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     },
     {
       "id": "4060976971",
@@ -85,7 +124,8 @@
       "created_at": "2026-09-21T06:52:07.814Z",
       "updated_at": "2026-09-21T06:52:07.820Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     },
     {
       "id": "4048413657",
@@ -98,7 +138,8 @@
       "created_at": "2026-09-14T16:44:26.865Z",
       "updated_at": "2026-09-28T11:42:21.134Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     },
     {
       "id": "4032504441",
@@ -111,8 +152,9 @@
       "created_at": "2026-09-04T06:06:33.890Z",
       "updated_at": "2026-09-04T06:06:33.897Z",
       "pinned": false,
-      "ausfall": false
+      "ausfall": false,
+      "plan": null
     }
   ],
-  "content_changed_at": "2026-10-15T14:56:18+02:00"
+  "content_changed_at": "2026-10-15T14:59:18+02:00"
 }
