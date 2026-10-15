@@ -54,7 +54,7 @@ python3 -m http.server 8765         # serve locally → http://localhost:8765
 
 **Frontend:** `index.html`, `app.js` and `style.css` are vanilla. `app.js` loads the three JSON files and renders four cards: Ausfall, Termine, Kontakt, Padlet.
 - Plans render as tables with a „Meine Klasse“ filter, stored in localStorage only. The Ausfall chip then says whether that class is affected on the next plan day.
-- A plan whose date has passed moves to „Ältere Einträge“. Colors are CSS custom properties on `:root` with a `prefers-color-scheme: dark` override.
+- A plan whose date has passed moves to „Ältere Einträge“. The school address is hardcoded in `app.js` (`ADDRESS`), because the website lacks it. Its source is the Schulleitung letterhead in a Padlet PDF. Colors are CSS custom properties on `:root` with a `prefers-color-scheme: dark` override.
 
 **CI (`.github/workflows/update.yml`):** a single job with two crons.
 

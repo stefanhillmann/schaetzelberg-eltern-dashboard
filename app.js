@@ -1,6 +1,8 @@
 "use strict";
 
 const TZ = "Europe/Berlin";
+// Steht nicht auf der Schulwebsite; Quelle: Briefkopf der Schulleitung im Eltern-Padlet („Termine 1. Schulhalbjahr“)
+const ADDRESS = "Wolfsburger Weg 15, 12109 Berlin";
 const PADLET_STALE_HOURS = 3;   // stündlich geprüft – ab 3 h ohne Erfolg gilt es als veraltet
 const WEBSITE_STALE_HOURS = 36; // täglich geprüft
 const RECENT_DAYS = 14;         // so lange gelten Ausfall-Meldungen als aktuell
@@ -13,6 +15,7 @@ const ICONS = {
   check: '<path d="M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20zm-1.2 13.6 6.4-6.4-1.4-1.4-5 5-2.2-2.2-1.4 1.4z"/>',
   warn: '<path d="M12 2 1 21h22zm1 15h-2v-2h2zm0-4h-2V9h2z"/>',
   web: '<path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm6.9 6h-3a15.7 15.7 0 0 0-1.4-3.6A8 8 0 0 1 18.9 8zM12 4c.8 1.2 1.5 2.5 1.9 4h-3.8c.4-1.5 1.1-2.8 1.9-4zM4.3 14a8 8 0 0 1 0-4h3.4a16.5 16.5 0 0 0 0 4zm.8 2h3a15.7 15.7 0 0 0 1.4 3.6A8 8 0 0 1 5.1 16zm3-8h-3a8 8 0 0 1 4.4-3.6C8.9 5.5 8.4 6.7 8.1 8zM12 20c-.8-1.2-1.5-2.5-1.9-4h3.8c-.4 1.5-1.1 2.8-1.9 4zm2.3-6H9.7a14.7 14.7 0 0 1 0-4h4.6a14.7 14.7 0 0 1 0 4zm.3 5.6c.6-1.1 1.1-2.3 1.4-3.6h3a8 8 0 0 1-4.4 3.6zm1.7-5.6a16.5 16.5 0 0 0 0-4h3.4a8 8 0 0 1 0 4z"/>',
+  map: '<path d="M12 2a7 7 0 0 1 7 7c0 5.2-7 13-7 13S5 14.2 5 9a7 7 0 0 1 7-7zm0 4.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5z"/>',
   ext: '<path d="M14 3h7v7h-2V6.4l-9.3 9.3-1.4-1.4L17.6 5H14zM5 5h6v2H5v12h12v-6h2v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2z"/>',
 };
 const icon = (name) => `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">${ICONS[name]}</svg>`;
@@ -236,6 +239,7 @@ function renderKontakt(web) {
   let html = `<div class="contact-main">`;
   if (tel) html += `<a class="btn primary" href="${tel}">${icon("phone")}<span><span class="lbl">Sekretariat</span><span class="val">${esc(c.phone)}</span></span></a>`;
   if (c.email) html += `<a class="btn" href="mailto:${esc(c.email)}">${icon("mail")}<span><span class="lbl">E-Mail Sekretariat</span><span class="val">${esc(c.email)}</span></span></a>`;
+  html += `<a class="btn" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Schätzelberg-Grundschule, " + ADDRESS)}" target="_blank" rel="noopener">${icon("map")}<span><span class="lbl">Adresse</span><span class="val">${esc(ADDRESS)}</span></span></a>`;
   if (c.sick_email) html += `<a class="btn" href="mailto:${esc(c.sick_email)}?subject=${encodeURIComponent("Krankmeldung")}">${icon("sick")}<span><span class="lbl">Krankmeldung (Name, Klasse, voraussichtliche Dauer)</span><span class="val">${esc(c.sick_email)}</span></span></a>`;
   html += `</div>`;
   for (const g of web.contact_groups || []) {
