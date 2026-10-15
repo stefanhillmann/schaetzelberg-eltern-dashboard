@@ -31,7 +31,8 @@ python3 -m http.server 8765         # serve locally → http://localhost:8765
   - It downloads the post's signed attachment URL, which expires, so the URL itself is never stored. Only posts from the last 14 days are processed.
   - It runs `pdftotext -layout` and parses the date plus rows split into columns on 2+ spaces: Stunde, Klasse, Info. Wrapped info lines are appended to the row before. Bullets after „Aktuelles…“ become notes.
   - The result is stored as `post.plan`. If the layout is unknown but text exists, it falls back to `plan.raw`.
-  - Test it offline with `python3 scripts/vertretungsplan.py file.txt`.
+  - Regression check: run `python3 scripts/check_plans.py`. Add `--show X.pdf` to print the extracted text and the parse result. Add `--accept X.pdf` to store the result as `X.expected.json`; do this only after checking it against the rendered PDF.
+  - The test PDFs come from the user and live in `testdata/vertretungsplaene/`. That folder is gitignored on purpose: **never commit these PDFs or their expectations.** Put new PDFs the user provides there.
 - `fetch_website.py` parses the WordPress/Elementor homepage:
   - events from `.sel-event-item` markup (dates like `15.10.26 | 14 Uhr`, sometimes without a year; `infer_year` handles that);
   - contact info from the header;

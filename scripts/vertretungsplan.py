@@ -22,13 +22,8 @@ NOTES_RE = re.compile(r"^\s*Aktuelles", re.I)
 BULLET_RE = re.compile(r"^\s*[•●▪\-–]\s*(.*)$")
 
 
-def pdf_to_text(url):
-    if not shutil.which("pdftotext"):
-        return None
-    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        data = resp.read()
-    if not data.startswith(b"%PDF"):
+def pdf_bytes_to_text(data):
+    if not shutil.which("pdftotext") or not data.startswith(b"%PDF"):
         return None
     with tempfile.NamedTemporaryFile(suffix=".pdf") as f:
         f.write(data)
@@ -37,6 +32,14 @@ def pdf_to_text(url):
     if out.returncode != 0:
         return None
     return out.stdout.decode("utf-8", errors="replace")
+
+
+def pdf_to_text(url):
+    if not shutil.which("pdftotext"):
+        return None
+    req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        return pdf_bytes_to_text(resp.read())
 
 
 def parse(text):

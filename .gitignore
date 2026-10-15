@@ -2,3 +2,6 @@ __pycache__/
 _site/
 .DS_Store
 .claude/
+
+# Lokale Test-PDFs (Vertretungspläne) – nicht ins Repo
+testdata/
