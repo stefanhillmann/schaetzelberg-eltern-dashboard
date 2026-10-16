@@ -41,13 +41,6 @@
   ],
   "events": [
     {
-      "date": "2026-10-15",
-      "date_text": "15.10.26 | 14 Uhr",
-      "time": "14 Uhr",
-      "title": "Schwung in den Herbst",
-      "url": "https://schaetzelberg-gs.de/wp-content/uploads/2026/10/Flyer_Schwung-in-den-Herbst.pdf"
-    },
-    {
       "date": "2026-11-04",
       "date_text": "04.11.26 | 16-18 Uhr",
       "time": "16-18 Uhr",
@@ -74,7 +67,14 @@
       "time": "17-20 Uhr",
       "title": "Elternsprechtag",
       "url": null
+    },
+    {
+      "date": "2026-11-27",
+      "date_text": "27.11.26 | vormittags",
+      "time": "vormittags",
+      "title": "Vorlesewettbewerb",
+      "url": null
     }
   ],
-  "content_changed_at": "2026-10-15T14:26:59+02:00"
+  "content_changed_at": "2026-10-16T10:19:55+02:00"
 }
