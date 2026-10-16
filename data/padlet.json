@@ -39,51 +39,17 @@
     },
     {
       "id": "4100139254",
-      "title": "Aktuell/keine Änderung für Freitag",
-      "html": "<p>Bitte haben Sie Verständnis betreffs unserer Fehlstunden für Ihr Kind. Wir haben einen hohen Krankenstand im Team und hoffen nach den Ferien wieder alle an Bord zu sein. Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule</p><p><br></p>",
-      "text": "Bitte haben Sie Verständnis betreffs unserer Fehlstunden für Ihr Kind. Wir haben einen hohen Krankenstand im Team und hoffen nach den Ferien wieder alle an Bord zu sein. Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule",
+      "title": "Schöne Herbstferien",
+      "html": "<p>Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule</p><p><br></p>",
+      "text": "Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule",
       "section": "Stundenausfall/Vertretungsplan",
       "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/E1P8aXbMJRp5ZwA9",
-      "attachment": "Eltern_VP_26_10_16.pdf",
+      "attachment": "FullSizeRender.jpg",
       "created_at": "2026-10-15T12:38:38.932Z",
-      "updated_at": "2026-10-16T05:58:00.659Z",
+      "updated_at": "2026-10-16T18:43:07.668Z",
       "pinned": false,
       "ausfall": true,
-      "plan": {
-        "title": "Ausfall der Randstunden",
-        "date": "2026-10-16",
-        "weekday": "Freitag",
-        "rows": [
-          {
-            "stunde": "1./2.",
-            "klasse": "4b",
-            "info": "Klasse kann zur 3. Stunde kommen; Betreuung ist gewährleistet"
-          },
-          {
-            "stunde": "1.",
-            "klasse": "3a",
-            "info": "Entfällt; Kinder können zur 2. St. kommen; Betreuung ist ab 8 Uhr gewährleistet"
-          },
-          {
-            "stunde": "ab 3.St.",
-            "klasse": "6a",
-            "info": "Klasse wird entlassen; Betreuung bis 13:30 möglich"
-          },
-          {
-            "stunde": "5.+6.",
-            "klasse": "4c",
-            "info": "Stunde entfällt/Betreuung ist gewährleistet"
-          },
-          {
-            "stunde": "6.St.",
-            "klasse": "4a",
-            "info": "Entfällt/ Betreuung bis 13:30 gewährleistet"
-          }
-        ],
-        "notes": [
-          "Musikbetonungskurse von Abd entfallen bis auf Weiteres."
-        ]
-      }
+      "plan": null
     },
     {
       "id": "4087406271",
@@ -156,5 +122,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-10-16T13:14:35+02:00"
+  "content_changed_at": "2026-10-16T21:54:36+02:00"
 }
