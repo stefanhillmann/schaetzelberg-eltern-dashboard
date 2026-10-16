@@ -10,6 +10,34 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4101734759",
+      "title": "Übersicht Angebote",
+      "html": "",
+      "text": "",
+      "section": "Wichtige Informationen",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/MxrmZYeMLkqBZGOq",
+      "attachment": "U_bersicht_Angebote_26_10_15.pdf",
+      "created_at": "2026-10-16T10:45:02.659Z",
+      "updated_at": "2026-10-16T10:45:02.666Z",
+      "pinned": false,
+      "ausfall": false,
+      "plan": null
+    },
+    {
+      "id": "4101734289",
+      "title": "Newsletter Oktober",
+      "html": "",
+      "text": "",
+      "section": "Wichtige Informationen",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/PR3NWxqXEOL9ab0O",
+      "attachment": "Newsletter_06_Oktober_2026.pdf",
+      "created_at": "2026-10-16T10:44:30.504Z",
+      "updated_at": "2026-10-16T10:44:30.512Z",
+      "pinned": false,
+      "ausfall": false,
+      "plan": null
+    },
+    {
       "id": "4100139254",
       "title": "Aktuell/keine Änderung für Freitag",
       "html": "<p>Bitte haben Sie Verständnis betreffs unserer Fehlstunden für Ihr Kind. Wir haben einen hohen Krankenstand im Team und hoffen nach den Ferien wieder alle an Bord zu sein. Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule</p><p><br></p>",
@@ -74,13 +102,13 @@
     {
       "id": "4087404838",
       "title": "Schwung in den Herbst",
-      "html": "<p>Am <strong>Donnerstag, den 15.10., von 14:00 bis 17:00 Uhr</strong> möchten wir gemeinsam mit der gesamten Schulfamilie „Schwung in den Herbst“ bringen! <strong>Mitmachen können alle:</strong> Kinder, Eltern, Lehrkräfte, Erzieherinnen und Erzieher</p>",
-      "text": "Am Donnerstag, den 15.10., von 14:00 bis 17:00 Uhr möchten wir gemeinsam mit der gesamten Schulfamilie „Schwung in den Herbst“ bringen! Mitmachen können alle: Kinder, Eltern, Lehrkräfte, Erzieherinnen und Erzieher",
+      "html": "<p>Herzlichen Dank an die fleißigen Helfer und erholsame Ferien.</p>",
+      "text": "Herzlichen Dank an die fleißigen Helfer und erholsame Ferien.",
       "section": "Wichtige Informationen",
       "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/kxodWG9E20xbQgP7",
-      "attachment": "Schwung_in_den_Herbst_15_10_26.pdf",
+      "attachment": null,
       "created_at": "2026-10-07T05:39:45.213Z",
-      "updated_at": "2026-10-07T05:39:45.221Z",
+      "updated_at": "2026-10-16T09:15:31.990Z",
       "pinned": false,
       "ausfall": false,
       "plan": null
@@ -114,20 +142,6 @@
       "plan": null
     },
     {
-      "id": "4060976971",
-      "title": "Elternkurse",
-      "html": "",
-      "text": "",
-      "section": "Elternkurse",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/x5m7aov9r3y4WkAV",
-      "attachment": "NewsletterEFBSep26.pdf",
-      "created_at": "2026-09-21T06:52:07.814Z",
-      "updated_at": "2026-09-21T06:52:07.820Z",
-      "pinned": false,
-      "ausfall": false,
-      "plan": null
-    },
-    {
       "id": "4048413657",
       "title": "Einteilung Kurse Musikbetonung (ab Oktober 2026)",
       "html": "<p>Hinweise: </p><p>1) Orchester, Gitarre und Blockflöte können derzeit leider noch nicht stattfinden.</p><p>2) Findet ein Kurs während der Essenszeit statt, kann Ihr Kind in der 2. Hofpause zu Mittag essen.</p>",
@@ -140,21 +154,7 @@
       "pinned": false,
       "ausfall": false,
       "plan": null
-    },
-    {
-      "id": "4032504441",
-      "title": "Infoabend Mediengesundheit",
-      "html": "",
-      "text": "",
-      "section": "Elternkurse",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/yEPVZk7GB3wbZb0Y",
-      "attachment": "Flyer_Elternabend_Mediengesundheit_und__abh_ngigkeit_1.pdf",
-      "created_at": "2026-09-04T06:06:33.890Z",
-      "updated_at": "2026-09-04T06:06:33.897Z",
-      "pinned": false,
-      "ausfall": false,
-      "plan": null
     }
   ],
-  "content_changed_at": "2026-10-16T10:19:50+02:00"
+  "content_changed_at": "2026-10-16T13:14:35+02:00"
 }
