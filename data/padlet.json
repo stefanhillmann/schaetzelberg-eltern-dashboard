@@ -10,6 +10,20 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4130797612",
+      "title": "Mittwoch 04.11.",
+      "html": "<p>Liebe Eltern,</p><p><br></p><p>heute gibt es keine Ausfallstunden. </p><p><br></p><p>Für die Musikkurse Gitarre, Blockflöte und Orchester haben wir leider noch keine Vertretung gefunden. Diese entfallen weiterhin. </p>",
+      "text": "Liebe Eltern,\nheute gibt es keine Ausfallstunden.\nFür die Musikkurse Gitarre, Blockflöte und Orchester haben wir leider noch keine Vertretung gefunden. Diese entfallen weiterhin.",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/L8KjW9BDY6rlaJbv",
+      "attachment": null,
+      "created_at": "2026-11-04T06:21:29.496Z",
+      "updated_at": "2026-11-04T06:21:29.496Z",
+      "pinned": false,
+      "ausfall": true,
+      "plan": null
+    },
+    {
       "id": "4127169173",
       "title": "Neue Elternkurse",
       "html": "",
@@ -49,20 +63,6 @@
       "updated_at": "2026-10-16T10:44:30.512Z",
       "pinned": false,
       "ausfall": false,
-      "plan": null
-    },
-    {
-      "id": "4100139254",
-      "title": "Schöne Herbstferien",
-      "html": "<p>Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule</p><p><br></p>",
-      "text": "Bleiben Sie gesund und schöne Herbstferien 🍁 wünscht Ihnen und Ihrer Familie das Team der Schätzelberg Grundschule",
-      "section": "Stundenausfall/Vertretungsplan",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/E1P8aXbMJRp5ZwA9",
-      "attachment": "FullSizeRender.jpg",
-      "created_at": "2026-10-15T12:38:38.932Z",
-      "updated_at": "2026-10-16T18:43:07.668Z",
-      "pinned": false,
-      "ausfall": true,
       "plan": null
     },
     {
@@ -122,5 +122,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-02T12:26:59+01:00"
+  "content_changed_at": "2026-11-04T10:00:29+01:00"
 }
