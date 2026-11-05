@@ -10,6 +10,20 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4133275404",
+      "title": "Einladung Elternsprechtag 19.11.26",
+      "html": "",
+      "text": "",
+      "section": "Wichtige Informationen",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/Ae2Rav7214pDQnz4",
+      "attachment": "Einladung_Elternsprechtag.pdf",
+      "created_at": "2026-11-05T11:56:17.492Z",
+      "updated_at": "2026-11-05T11:56:17.497Z",
+      "pinned": false,
+      "ausfall": false,
+      "plan": null
+    },
+    {
       "id": "4130797612",
       "title": "Mittwoch 04.11.",
       "html": "<p>Liebe Eltern,</p><p><br></p><p>heute gibt es keine Ausfallstunden. </p><p><br></p><p>Für die Musikkurse Gitarre, Blockflöte und Orchester haben wir leider noch keine Vertretung gefunden. Diese entfallen weiterhin. </p>",
@@ -122,5 +136,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-04T10:00:29+01:00"
+  "content_changed_at": "2026-11-05T16:23:35+01:00"
 }
