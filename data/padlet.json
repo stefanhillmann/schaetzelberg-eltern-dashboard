@@ -10,6 +10,20 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4139728363",
+      "title": "Ausfallstunden Dienstag 10.11.2026",
+      "html": "<ol><li><p>Stunde/2a</p></li><li><p>Stunde/6a und 6b</p></li></ol>",
+      "text": "Stunde/2a\nStunde/6a und 6b",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/94PGWnLJnnBoQLRV",
+      "attachment": null,
+      "created_at": "2026-11-10T06:27:07.725Z",
+      "updated_at": "2026-11-10T06:28:22.999Z",
+      "pinned": false,
+      "ausfall": true,
+      "plan": null
+    },
+    {
       "id": "4137951165",
       "title": "Elternkurs",
       "html": "",
@@ -150,5 +164,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-09T17:07:43+01:00"
+  "content_changed_at": "2026-11-10T09:19:43+01:00"
 }
