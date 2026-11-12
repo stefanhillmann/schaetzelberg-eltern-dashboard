@@ -41,13 +41,6 @@
   ],
   "events": [
     {
-      "date": "2026-11-11",
-      "date_text": "11.11.26 | 16-18 Uhr",
-      "time": "16-18 Uhr",
-      "title": "1. Schulkonferenz",
-      "url": null
-    },
-    {
       "date": "2026-11-12",
       "date_text": "12.11.26 | 12 Uhr",
       "time": "12 Uhr",
@@ -74,7 +67,14 @@
       "time": "14-17 Uhr",
       "title": "Weihnachtsbasteln",
       "url": null
+    },
+    {
+      "date": null,
+      "date_text": "23.12.26-01.01.27",
+      "time": null,
+      "title": "Weihnachtsferien",
+      "url": null
     }
   ],
-  "content_changed_at": "2026-11-05T12:12:54+01:00"
+  "content_changed_at": "2026-11-12T12:30:39+01:00"
 }
