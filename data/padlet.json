@@ -10,20 +10,6 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
-      "id": "4145238899",
-      "title": "Liebe Eltern,",
-      "html": "<p>heute entfallen die Randstunden von 6a/6.Stunde und 6c/5.Stunde. </p><p>Wir wünschen ein schönes Wochenende. </p>",
-      "text": "heute entfallen die Randstunden von 6a/6.Stunde und 6c/5.Stunde.\nWir wünschen ein schönes Wochenende.",
-      "section": "Stundenausfall/Vertretungsplan",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/E851Q0K8B0nXaVAb",
-      "attachment": null,
-      "created_at": "2026-11-13T06:04:34.578Z",
-      "updated_at": "2026-11-13T06:04:34.578Z",
-      "pinned": false,
-      "ausfall": true,
-      "plan": null
-    },
-    {
       "id": "4137951165",
       "title": "Elternkurs",
       "html": "",
@@ -164,5 +150,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-13T08:50:26+01:00"
+  "content_changed_at": "2026-11-13T17:10:49+01:00"
 }
