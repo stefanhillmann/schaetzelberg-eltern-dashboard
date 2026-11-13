@@ -41,13 +41,6 @@
   ],
   "events": [
     {
-      "date": "2026-11-12",
-      "date_text": "12.11.26 | 12 Uhr",
-      "time": "12 Uhr",
-      "title": "Personalversammlung",
-      "url": null
-    },
-    {
       "date": "2026-11-19",
       "date_text": "19.11. | 17-20 Uhr",
       "time": "17-20 Uhr",
@@ -74,7 +67,14 @@
       "time": null,
       "title": "Weihnachtsferien",
       "url": null
+    },
+    {
+      "date": "2027-01-29",
+      "date_text": "29.01.27",
+      "time": null,
+      "title": "Halbjahreszeugnisse",
+      "url": null
     }
   ],
-  "content_changed_at": "2026-11-12T12:30:39+01:00"
+  "content_changed_at": "2026-11-13T12:15:42+01:00"
 }
