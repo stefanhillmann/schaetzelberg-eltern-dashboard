@@ -10,6 +10,20 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4150876212",
+      "title": "Weihnachtsbasteln",
+      "html": "<p>Liebe Eltern und Erziehungsberechtigte,</p><p>am 4.12.26 findet in unserer Schule der weihnachtliche Bastelnachmittag statt. </p><p>Da alle Schulbeschäftigten an diesem Nachmittag teilnehmen, schließt der Hort/SpB bereits um 15:00 Uhr und es wird nur noch eine Notbetreuung geben. Bitte holen Sie Ihr Kind bis zu dieser Uhrzeit ab.</p><p>Falls Sie eine Notbetreuung für Ihr Kind brauchen,</p><p>melden Sie das bitte bis zum 25.11.26 im Sekretariat an. Bitte mit Namen / Klasse des Kindes und bis zu welcher Uhrzeit Betreuung benötigt wird.</p><p>Mail: sekretariat@schaetzelberg.schule.berlin.de</p><p>Vielen Dank.</p><p>Wir freuen uns auf einen schönen Nachmittag.</p>",
+      "text": "Liebe Eltern und Erziehungsberechtigte,\nam 4.12.26 findet in unserer Schule der weihnachtliche Bastelnachmittag statt.\nDa alle Schulbeschäftigten an diesem Nachmittag teilnehmen, schließt der Hort/SpB bereits um 15:00 Uhr und es wird nur noch eine Notbetreuung geben. Bitte holen Sie Ihr Kind bis zu dieser Uhrzeit ab.\nFalls Sie eine Notbetreuung für Ihr Kind brauchen,\nmelden Sie das bitte bis zum 25.11.26 im Sekretariat an. Bitte mit Namen / Klasse des Kindes und bis zu welcher Uhrzeit Betreuung benötigt wird.\nMail: sekretariat@schaetzelberg.schule.berlin.de\nVielen Dank.\nWir freuen uns auf einen schönen Nachmittag.",
+      "section": "Wichtige Informationen",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/L8KjW9Bd2L9oaJbv",
+      "attachment": "Flyer_Weihnachtsbasteln.pdf",
+      "created_at": "2026-11-17T13:12:45.063Z",
+      "updated_at": "2026-11-17T13:12:45.068Z",
+      "pinned": false,
+      "ausfall": false,
+      "plan": null
+    },
+    {
       "id": "4137951165",
       "title": "Elternkurs",
       "html": "",
@@ -150,5 +164,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-13T17:10:49+01:00"
+  "content_changed_at": "2026-11-17T23:12:54+01:00"
 }
