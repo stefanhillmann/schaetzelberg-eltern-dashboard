@@ -10,6 +10,27 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4153926458",
+      "title": "Übersicht Elternsprechtag",
+      "html": "<p>Die Termine bei Fr. Konschak, Fr.Stolte und Fr. Veer fallen leider aus.</p>",
+      "text": "Die Termine bei Fr. Konschak, Fr.Stolte und Fr. Veer fallen leider aus.",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/BJkrQA1qPYYwQEge",
+      "attachment": "Elternsprechtag.pdf",
+      "created_at": "2026-11-19T06:26:24.967Z",
+      "updated_at": "2026-11-19T06:26:24.972Z",
+      "pinned": false,
+      "ausfall": true,
+      "plan": {
+        "title": null,
+        "date": null,
+        "weekday": null,
+        "rows": [],
+        "notes": [],
+        "raw": "Elternsprechtag 19.11.26 Raumverteilung\n              Räume mit einem B davor, befinden sich im Neubau\n\n                    Name                         Raumnummer\n\nFrau Arndt                                                        012\nHerr Bräuer                                                        113\nFrau Holstein                                                    B 104\n\nFrau Jagels                                                        016\nFrau Kaya-Celebi                                                   011\nHerr Kleinallermann                                              B 201\n\nFrau Konschak                      {SU asia                       124\nFrau Krystalla                                                   B111\nFrau Luig                                                        B 213\n\nFrau Nguyen                                                        128\nFrau Oschmann                                                    B 212\n\nFrau Pantelaki                                                   B102\nFrau Pilatowsky                                                  B 204\n\nFrau Poethke                                         125\nHerr Reith                                         B 110\n\nFrau Rieger                                          111\nFrau Schaeffer                                     B 101\n\nFrau Scholz                                          119\nFrauStelte-tstellv-Sehttleitung}-{äUt aus 104/105 Verw.\nFratfeertSehutleitung- {EX aus                 102 Verw\nFrau Vrind                                           112\nFrau Wilcken                                       B 211\nHerr Yildiz                                                      B113\nFrau Zech                                                        B 109"
+      }
+    },
+    {
       "id": "4152469967",
       "title": "Information zum SpB/Hort",
       "html": "",
@@ -61,20 +82,6 @@
       "attachment": "Plakat_ADHS_November_2026.pdf",
       "created_at": "2026-11-09T09:18:00.557Z",
       "updated_at": "2026-11-09T09:18:00.562Z",
-      "pinned": false,
-      "ausfall": false,
-      "plan": null
-    },
-    {
-      "id": "4133275404",
-      "title": "Einladung Elternsprechtag 19.11.26",
-      "html": "",
-      "text": "",
-      "section": "Wichtige Informationen",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/Ae2Rav7214pDQnz4",
-      "attachment": "Einladung_Elternsprechtag.pdf",
-      "created_at": "2026-11-05T11:56:17.492Z",
-      "updated_at": "2026-11-05T11:56:17.497Z",
       "pinned": false,
       "ausfall": false,
       "plan": null
@@ -164,5 +171,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-18T12:57:08+01:00"
+  "content_changed_at": "2026-11-19T12:56:48+01:00"
 }
