@@ -10,36 +10,68 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
-      "id": "4158001925",
-      "title": "Aktuell Montag 23.11.2026",
-      "html": "<p>Wir wünschen Ihnen und Ihren Familien eine schöne Adventszeit und bleiben Sie gesund! </p><p>Ihr Schulteam 🎄</p>",
-      "text": "Wir wünschen Ihnen und Ihren Familien eine schöne Adventszeit und bleiben Sie gesund!\nIhr Schulteam 🎄",
+      "id": "4159892131",
+      "title": "Mittwoch Notbetreuung ab 14:00 Uhr",
+      "html": "",
+      "text": "",
       "section": "Stundenausfall/Vertretungsplan",
-      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/do3MQJdXM3VgW15w",
-      "attachment": "Eltern_VP_26_11_23.pdf",
-      "created_at": "2026-11-23T06:21:51.098Z",
-      "updated_at": "2026-11-23T06:21:51.103Z",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/lkDVaKD25NPwQPp9",
+      "attachment": "Notbetreuung.pdf",
+      "created_at": "2026-11-24T11:44:49.709Z",
+      "updated_at": "2026-11-24T11:44:49.716Z",
+      "pinned": false,
+      "ausfall": true,
+      "plan": null
+    },
+    {
+      "id": "4159625169",
+      "title": "Neu Dienstag",
+      "html": "",
+      "text": "",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/do3MQJdXqz7lW15w",
+      "attachment": "Eltern_VP_26_11_24.pdf",
+      "created_at": "2026-11-24T07:27:19.903Z",
+      "updated_at": "2026-11-24T07:27:19.909Z",
       "pinned": false,
       "ausfall": true,
       "plan": {
         "title": "Ausfall der Randstunden",
-        "date": "2026-11-23",
-        "weekday": "Montag",
+        "date": "2026-11-24",
+        "weekday": "Dienstag",
         "rows": [
           {
-            "stunde": "6.",
-            "klasse": "4a",
+            "stunde": "1.",
+            "klasse": "2b",
+            "info": "Entfällt/Betreuung ist gewährleistet"
+          },
+          {
+            "stunde": "5./7.",
+            "klasse": "4c",
             "info": "Entfällt/Betreuung ist gewährleistet"
           },
           {
             "stunde": "6.+7.",
-            "klasse": "4c",
-            "info": "Entfallen/Betreuung bis 13:30; Hortkinder darüber hinaus"
+            "klasse": "6b",
+            "info": "Entfällt/Betreuung bis 13:30"
+          },
+          {
+            "stunde": "7.",
+            "klasse": "5a",
+            "info": "Entfällt"
+          },
+          {
+            "stunde": "6.+7.",
+            "klasse": "6c",
+            "info": "Entfällt/Betreuung bis 13:30"
+          },
+          {
+            "stunde": "6.",
+            "klasse": "4a",
+            "info": "Entfällt/Betreuung ist gewährleistet"
           }
         ],
-        "notes": [
-          "Musikbetonungskurse von Abd entfallen bis auf Weiteres."
-        ]
+        "notes": []
       }
     },
     {
@@ -183,5 +215,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-23T09:55:36+01:00"
+  "content_changed_at": "2026-11-24T14:58:30+01:00"
 }
