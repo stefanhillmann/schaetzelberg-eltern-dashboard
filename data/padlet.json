@@ -10,6 +10,32 @@
   "ausfall_section": "Stundenausfall/Vertretungsplan",
   "posts": [
     {
+      "id": "4161074514",
+      "title": "Mittwoch, 25.11.",
+      "html": "",
+      "text": "",
+      "section": "Stundenausfall/Vertretungsplan",
+      "url": "https://padlet.com/veerchristina/padlet-schatzelberg-gs-eltern-7w4dic7m9gbtmex7/wish/BJkrQA16qeL2QEge",
+      "attachment": "Eltern_VP_26_11_25.pdf",
+      "created_at": "2026-11-25T06:28:03.623Z",
+      "updated_at": "2026-11-25T06:28:03.628Z",
+      "pinned": false,
+      "ausfall": true,
+      "plan": {
+        "title": "Ausfall der Randstunden",
+        "date": "2026-11-25",
+        "weekday": "Mittwoch",
+        "rows": [
+          {
+            "stunde": "1.",
+            "klasse": "6b",
+            "info": "Entfällt/Betreuung ist gewährleistet"
+          }
+        ],
+        "notes": []
+      }
+    },
+    {
       "id": "4159892131",
       "title": "Mittwoch Notbetreuung ab 14:00 Uhr",
       "html": "",
@@ -215,5 +241,5 @@
       "plan": null
     }
   ],
-  "content_changed_at": "2026-11-24T14:58:30+01:00"
+  "content_changed_at": "2026-11-25T13:39:44+01:00"
 }
