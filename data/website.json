@@ -41,13 +41,6 @@
   ],
   "events": [
     {
-      "date": "2026-11-27",
-      "date_text": "27.11.26 | vormittags",
-      "time": "vormittags",
-      "title": "Vorlesewettbewerb",
-      "url": null
-    },
-    {
       "date": "2026-12-04",
       "date_text": "04.12.26 | 14-17 Uhr",
       "time": "14-17 Uhr",
@@ -74,7 +67,14 @@
       "time": null,
       "title": "Winterferien",
       "url": null
+    },
+    {
+      "date": "2027-02-09",
+      "date_text": "09.02.27",
+      "time": null,
+      "title": "Fasching",
+      "url": null
     }
   ],
-  "content_changed_at": "2026-11-25T14:13:21+01:00"
+  "content_changed_at": "2026-11-28T13:00:23+01:00"
 }
